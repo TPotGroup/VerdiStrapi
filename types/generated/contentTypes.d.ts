@@ -794,6 +794,7 @@ export interface ApiAmenityAmenity extends Schema.CollectionType {
     singularName: 'amenity';
     pluralName: 'amenities';
     displayName: 'Amenity';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -809,7 +810,7 @@ export interface ApiAmenityAmenity extends Schema.CollectionType {
         number
       > &
       Attribute.DefaultTo<1>;
-    image: Attribute.Media;
+    image: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -869,6 +870,7 @@ export interface ApiTeamMemberTeamMember extends Schema.CollectionType {
     singularName: 'team-member';
     pluralName: 'team-members';
     displayName: 'TeamMember';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -877,7 +879,7 @@ export interface ApiTeamMemberTeamMember extends Schema.CollectionType {
     name: Attribute.String;
     role: Attribute.String;
     department: Attribute.String;
-    image: Attribute.Media;
+    image: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
