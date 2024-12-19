@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pucks",
+  "info": {
+    "singularName": "puck",
+    "pluralName": "pucks",
+    "displayName": "Puck"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "route": {
+      "type": "string"
+    },
+    "database": {
+      "type": "json"
+    }
+  }
+}

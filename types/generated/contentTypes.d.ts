@@ -864,6 +864,29 @@ export interface ApiContactContact extends Schema.CollectionType {
   };
 }
 
+export interface ApiPuckPuck extends Schema.CollectionType {
+  collectionName: 'pucks';
+  info: {
+    singularName: 'puck';
+    pluralName: 'pucks';
+    displayName: 'Puck';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    route: Attribute.String;
+    database: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::puck.puck', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::puck.puck', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTeamMemberTeamMember extends Schema.CollectionType {
   collectionName: 'team_members';
   info: {
@@ -918,6 +941,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::amenity.amenity': ApiAmenityAmenity;
       'api::contact.contact': ApiContactContact;
+      'api::puck.puck': ApiPuckPuck;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
     }
   }
