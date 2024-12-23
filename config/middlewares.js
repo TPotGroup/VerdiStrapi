@@ -14,7 +14,14 @@ module.exports = [
       },
     },
   },
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      headers: '*',
+      origin: ['http://localhost:1337', 'http://localhost:3000', 'https://www.verdiresidence.com','https://verdiresidence.com', 'https://www.verdiresidences.com', 'https://verdiresidences.com'],
+    }
+  },
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
